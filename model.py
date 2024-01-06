@@ -27,7 +27,7 @@ class ResidualConv2d(nn.Module):
             nn.ReLU(),
             nn.Conv2d(out_channels, out_channels, 3, padding=1),
             nn.BatchNorm2d(out_channels),
-            nn.ReLU())
+            nn.MaxPool2d(2))
         self.residual_connection_down = nn.Sequential(nn.Conv2d(in_channels, out_channels, 3, padding=1), nn.MaxPool2d(2))
         self.relu = nn.ReLU()
 
